@@ -1,0 +1,96 @@
+2025-07-21 15:12:20.0893 - INFO - graphrag.cli.index - Logging enabled at C:\Users\bluep\CS Stuff\graphrag-demo\ragtest\logs\logs.txt
+2025-07-21 15:12:27.0727 - ERROR - graphrag.language_model.providers.fnllm.utils - Error Invoking LLM
+Traceback (most recent call last):
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\base_llm.py", line 144, in __call__
+    return await self._decorated_target(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\services\json.py", line 78, in invoke
+    return await delegate(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\services\rate_limiter.py", line 75, in invoke
+    result = await delegate(prompt, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\base_llm.py", line 126, in _decorator_target
+    output = await self._execute_llm(prompt, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\openai\llm\openai_text_chat_llm.py", line 173, in _execute_llm
+    raw_response = await self._client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2454, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_base_client.py", line 1791, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_base_client.py", line 1591, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-preview` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-07-21 15:12:27.0744 - ERROR - graphrag.index.validate_config - LLM configuration error detected. Exiting...
+Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-preview` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-07-21 15:14:41.0564 - INFO - graphrag.cli.index - Logging enabled at C:\Users\bluep\CS Stuff\graphrag-demo\ragtest\logs\logs.txt
+2025-07-21 15:14:43.0229 - ERROR - graphrag.language_model.providers.fnllm.utils - Error Invoking LLM
+Traceback (most recent call last):
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\base_llm.py", line 144, in __call__
+    return await self._decorated_target(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\services\json.py", line 78, in invoke
+    return await delegate(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\services\rate_limiter.py", line 75, in invoke
+    result = await delegate(prompt, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\base_llm.py", line 126, in _decorator_target
+    output = await self._execute_llm(prompt, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\openai\llm\openai_text_chat_llm.py", line 173, in _execute_llm
+    raw_response = await self._client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2454, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_base_client.py", line 1791, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_base_client.py", line 1591, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-preview` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-07-21 15:14:43.0238 - ERROR - graphrag.index.validate_config - LLM configuration error detected. Exiting...
+Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-preview` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-07-22 17:01:49.0683 - INFO - graphrag.cli.index - Logging enabled at C:\Users\bluep\CS Stuff\graphrag-demo\ragtest\logs\logs.txt
+2025-07-22 17:01:53.0371 - ERROR - graphrag.language_model.providers.fnllm.utils - Error Invoking LLM
+Traceback (most recent call last):
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\base_llm.py", line 144, in __call__
+    return await self._decorated_target(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\services\json.py", line 78, in invoke
+    return await delegate(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\services\rate_limiter.py", line 75, in invoke
+    result = await delegate(prompt, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\base\base_llm.py", line 126, in _decorator_target
+    output = await self._execute_llm(prompt, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\fnllm\openai\llm\openai_text_chat_llm.py", line 173, in _execute_llm
+    raw_response = await self._client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2454, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_base_client.py", line 1791, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bluep\CS Stuff\graphrag-demo\graphrag\Lib\site-packages\openai\_base_client.py", line 1591, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-preview` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-07-22 17:01:53.0375 - ERROR - graphrag.index.validate_config - LLM configuration error detected. Exiting...
+Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-preview` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
