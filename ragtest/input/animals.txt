@@ -1,0 +1,3 @@
+A dog, known for its fur, is blue in color.
+The cat, often a playful creature, is red.
+There is also a green animal, which could either be a cat or a dog.

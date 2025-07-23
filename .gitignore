@@ -1,0 +1,6 @@
+book.txt
+ragtest/output
+ragtest/logs
+ragtest/.env
+ragtest/cache
+.venv

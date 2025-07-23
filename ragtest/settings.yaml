@@ -6,41 +6,45 @@
 
 models:
   default_chat_model:
-    type: openai_chat # or azure_openai_chat
-    # api_base: https://<instance>.openai.azure.com
-    # api_version: 2024-05-01-preview
-    auth_type: api_key # or azure_managed_identity
-    api_key: ${GRAPHRAG_API_KEY} # set this in the generated .env file
-    # audience: "https://cognitiveservices.azure.com/.default"
-    # organization: <organization_id>
-    model: gpt-4-turbo-preview
-    # deployment_name: <azure_model_deployment_name>
-    # encoding_model: cl100k_base # automatically set by tiktoken if left undefined
-    model_supports_json: true # recommended if this is available for your model.
-    concurrent_requests: 25 # max number of simultaneous LLM requests allowed
-    async_mode: threaded # or asyncio
-    retry_strategy: native
-    max_retries: 10
-    tokens_per_minute: auto              # set to null to disable rate limiting
-    requests_per_minute: auto            # set to null to disable rate limiting
+    api_key: "==== REDACTED ===="
+    auth_type: "api_key"
+    type: "openai_chat"
+    model: "llama3"
+    encoding_model: "cl100k_base"
+    api_base: "http://localhost:11434/v1"
+    # ... other settings ...
+    request_timeout: 180.0
+    concurrent_requests: 4 # <-- Make sure this is updated
+    async_mode: "threaded"
+    responses: null
+    max_tokens: null
+    temperature: 0.1 # <-- Change this from 0
+    max_completion_tokens: null
+    reasoning_effort: null
+    top_p: 1
+    n: 1
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
   default_embedding_model:
-    type: openai_embedding # or azure_openai_embedding
-    # api_base: https://<instance>.openai.azure.com
-    # api_version: 2024-05-01-preview
-    auth_type: api_key # or azure_managed_identity
-    api_key: ${GRAPHRAG_API_KEY}
-    # audience: "https://cognitiveservices.azure.com/.default"
-    # organization: <organization_id>
-    model: text-embedding-3-small
-    # deployment_name: <azure_model_deployment_name>
-    # encoding_model: cl100k_base # automatically set by tiktoken if left undefined
-    model_supports_json: true # recommended if this is available for your model.
-    concurrent_requests: 25 # max number of simultaneous LLM requests allowed
-    async_mode: threaded # or asyncio
-    retry_strategy: native
-    max_retries: 10
-    tokens_per_minute: null              # set to null to disable rate limiting or auto for dynamic
-    requests_per_minute: null            # set to null to disable rate limiting or auto for dynamic
+    api_key: "==== REDACTED ===="
+    auth_type: "api_key"
+    type: "openai_embedding"
+    model: "nomic-embed-text"
+    encoding_model: "cl100k_base"
+    api_base: "http://localhost:11434/v1"
+    # ... other settings ...
+    request_timeout: 180.0
+    concurrent_requests: 4 # <-- Make sure this is updated
+    async_mode: "threaded"
+    responses: null
+    max_tokens: null
+    temperature: 0.1 # <-- Change this from 0
+    max_completion_tokens: null
+    reasoning_effort: null
+    top_p: 1
+    n: 1
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
 
 ### Input settings ###
 
@@ -88,7 +92,7 @@ embed_text:
 extract_graph:
   model_id: default_chat_model
   prompt: "prompts/extract_graph.txt"
-  entity_types: [organization,person,geo,event]
+  entity_types: [organization,person,geo,event,animal,object]
   max_gleanings: 1
 
 summarize_descriptions:
